@@ -1,25 +1,36 @@
-export type CompanyActivity = 'beauty care' | 'hairdressing';
-type InsuranceOptions = 'bodilyInjury' | 'propertyDamage' | 'courtAndLegal' | 'companyVehicles' | 'injuries' | 'damagedEquipment' | 'productsToProduce';
+type InsuranceOption = 'bodilyInjury' | 'propertyDamage' | 'courtAndLegal' | 'companyVehicles' | 'injuries' | 'damagedEquipment' | 'productsToProduce';
 
-interface ScoreItem {
-  option: InsuranceOptions;
+export const insuranceOptions: { option: InsuranceOption, title: string }[] = [
+  { option: 'bodilyInjury', title:  'Bodily Injury'},
+  { option: 'propertyDamage', title:  'Property damage'},
+  { option: 'courtAndLegal', title:  'Court and legal fees' },
+  { option: 'companyVehicles', title: 'Company vehicles' },
+  { option: 'injuries', title: 'Injuries to you or your employees' },
+  { option: 'damagedEquipment', title: 'Damage to your equipement' },
+  { option: 'productsToProduce', title: 'Products you produce' },
+]
+
+export type CompanyActivity = 'Beauty care' | 'Hairdressing';
+
+export interface ScoreItem {
+  option: InsuranceOption;
   points: number;
 }
 
-export interface CompanyActivityOption {
+export interface ActivityScoreOption {
   value: CompanyActivity
   scoreItems: ScoreItem[]
 }
 
-export const companyActivities: CompanyActivityOption[] = [
-  { value: 'beauty care', scoreItems: [
+export const companyActivityScores: ActivityScoreOption[] = [
+  { value: 'Beauty care', scoreItems: [
       { option: 'bodilyInjury', points: 80 },
       { option: 'propertyDamage', points: 10 },
       { option: 'damagedEquipment', points: 40 },
       { option: 'companyVehicles', points: 20 },
     ]
   },
-  { value: 'hairdressing', scoreItems: [
+  { value: 'Hairdressing', scoreItems: [
       { option: 'bodilyInjury', points: 60 },
       { option: 'propertyDamage', points: 40 },
       { option: 'damagedEquipment', points: 40 },
@@ -28,14 +39,12 @@ export const companyActivities: CompanyActivityOption[] = [
   }
 ];
 
-export const sizeMultiplier: Record<InsuranceOptions, number> = {
-  bodilyInjury: 1.01,
-  propertyDamage: 1.01,
-  courtAndLegal: 1.01,
-  companyVehicles: 1.03,
+export const sizeMultiplier: Record<InsuranceOption, number> = {
+  bodilyInjury: .1,
+  propertyDamage: 0,
+  courtAndLegal: .9,
+  companyVehicles: .8,
   injuries: 1,
-  damagedEquipment: 1,
+  damagedEquipment: .1,
   productsToProduce: 1,
 }
-
-

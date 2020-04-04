@@ -21,3 +21,27 @@
 span {
   color: var(--color-insify-blue);
 }
+
+
+/* Score preview styling */
+.options {
+  display: flex;
+}
+
+.option {
+  margin-bottom: 16px;
+}
+
+.score {
+  background-color: rgba(0,0,0,0.3);
+  height: 8px;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.score .fill {
+  height: 100%;
+  background-color: orange;
+  border-radius: 4px;
+  transition: width .6s ease-in-out;
+}

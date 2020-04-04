@@ -16,16 +16,16 @@ interface AppState {
 
 const initialState: AppState = {
   size: 4,
-  activity: 'beauty care',
+  activity: 'Beauty care',
 }
 
 const reducer = (state: AppState, action: Action): AppState => {
   const { type, payload } = action;
 
   switch (type) {
-    case "SET_ACTIVITY": {
+    case "SET_ACTIVITY":
       return typeof payload === 'string' ? { ...state, activity: payload } : state;
-    }
+
     case "SET_COMPANY_SIZE":
       return typeof payload === 'number' ? { ...state, size: payload } : state;
 

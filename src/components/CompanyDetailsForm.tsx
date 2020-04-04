@@ -2,7 +2,7 @@ import * as React from 'react';
 import FormSlider from './FormSlider';
 import FormSelect from './FormSelect';
 import { CompanyContext } from '../context';
-import { companyActivities } from '../helpers/companyScore';
+import { companyActivityScores } from '../helpers/companyScore';
 
 interface FormCopy {
   confirmButton: string;
@@ -14,8 +14,7 @@ const CompanyDetailsForm: React.FC = () => {
   const [formCopy, setFormCopy] = React.useState<FormCopy>({ confirmButton: 'Yes it is', toggleButton: 'No, it’s not' });
   const [formIsHidden, setFormIsHidden] = React.useState<boolean>(true)
 
-  const mappedOptions = companyActivities.map(activity => activity.value);
-
+  const mappedActivityOptions = companyActivityScores.map(activity => activity.value);
 
   React.useEffect(() => {
     formIsHidden
@@ -25,7 +24,7 @@ const CompanyDetailsForm: React.FC = () => {
 
   return (
     <section className="details-form">
-      <h1>Thanks. According to the CoC your company size is <span>{state.size} fte</span> and has activities in <span>{state.activity}</span>. Is that correct?</h1>
+      <h1>Thanks. According to the CoC your company size is <span>{state.size} fte</span> and has activities in <span>{state.activity.toLocaleLowerCase()}</span>. Is that correct?</h1>
 
       {formIsHidden ? '' :
         <div className="form">
@@ -37,7 +36,7 @@ const CompanyDetailsForm: React.FC = () => {
           </FormSlider>
           <FormSelect
             value={state.activity}
-            options={mappedOptions}
+            options={mappedActivityOptions}
             onChange={(activity) => dispatch({ type: 'SET_ACTIVITY', payload: activity })}
           >
             And what are your main activities?
