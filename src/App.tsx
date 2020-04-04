@@ -1,4 +1,5 @@
 import React from 'react';
+import { CompanyProvider } from './context';
 import CompanyDetailsForm from './components/CompanyDetailsForm';
 import CompanyDetailsPreview from './components/CompanyDetailsPreview';
 import './App.css';
@@ -6,8 +7,10 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <CompanyDetailsForm />
-      <CompanyDetailsPreview />
+      <CompanyProvider>
+        <CompanyDetailsForm />
+        <CompanyDetailsPreview />
+      </CompanyProvider>
     </div>
   );
 }

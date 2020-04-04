@@ -2,7 +2,7 @@ import * as React from 'react';
 
 interface Props {
   value: number;
-  onChange: React.Dispatch<React.SetStateAction<number>>;
+  onChange: React.Dispatch<number>;
 }
 
 const FormSlider: React.FC<Props> = (props) => {

@@ -3,10 +3,10 @@ import * as React from 'react';
 interface Props {
   value: string;
   options: string[];
-  onChange: React.Dispatch<React.SetStateAction<string>>;
+  onChange: React.Dispatch<string>;
 }
 
-const FormSlider: React.FC<Props> = (props) => {
+const FormSelect: React.FC<Props> = (props) => {
   return (
     <div className="form-element">
       <label htmlFor="main-activity">{props.children}</label>
@@ -17,4 +17,4 @@ const FormSlider: React.FC<Props> = (props) => {
   )
 }
 
-export default FormSlider;
+export default FormSelect;
