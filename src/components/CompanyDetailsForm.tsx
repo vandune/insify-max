@@ -4,6 +4,7 @@ import FormSlider from './FormSlider';
 import FormSelect from './FormSelect';
 import { CompanyContext } from '../context';
 import { companyActivityScores } from '../helpers/companyScore';
+import { debounce } from 'lodash';
 
 interface FormCopy {
   confirmButton: string;
@@ -17,7 +18,7 @@ interface ButtonProps {
 const CompanyDetailsForm: React.FC = () => {
   const { dispatch, state } = React.useContext(CompanyContext);
   const [formCopy, setFormCopy] = React.useState<FormCopy>({ confirmButton: 'Yes it is', toggleButton: 'No, it’s not' });
-  const [formIsHidden, setFormIsHidden] = React.useState<boolean>(true)
+  const [formIsHidden, setFormIsHidden] = React.useState<boolean>(true);
 
   const mappedActivityOptions = companyActivityScores.map(activity => activity.value);
 
@@ -96,7 +97,11 @@ const Span = styled.span`
 `
 
 const Section = styled.section`
-  margin-bottom: 40px;
+  margin-bottom: 48px;
+
+  > * {
+    margin-bottom: 24px;
+  }
 `
 
 const ButtonGroup = styled.div`

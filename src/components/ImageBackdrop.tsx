@@ -30,8 +30,8 @@ const Backdrop = styled.div`
 
 const Img = styled.img`
   object-fit: cover;
-  width: calc(100% + 160px);
-  height: calc(100% + 160px);
-  margin: -80px;
-  filter: blur(80px);
+  width: calc(100% + 60px);
+  height: calc(100% + 60px);
+  margin: -30px;
+  filter: blur(30px);
 `

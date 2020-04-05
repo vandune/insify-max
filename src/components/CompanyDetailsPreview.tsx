@@ -53,6 +53,7 @@ const PreviewWrapper = styled.div`
  align-items: center;
  z-index: 1;
  padding-top: 40px;
+ padding-bottom: 48px;
 
  @media(min-width: 1120px) {
     padding-top: 80px;
