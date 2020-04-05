@@ -7,7 +7,7 @@ interface Props {
 
 const FormSlider: React.FC<Props> = (props) => {
   return (
-    <div className="form-element">
+    <div>
       <label htmlFor="slider">{props.children}</label>
       <input type="range" name="slider" value={props.value} onChange={(event) => props.onChange(+event.target.value)}/>
     </div>
