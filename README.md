@@ -1,4 +1,4 @@
-# A example project created in React + typescript.
+# Business insurance tool created with React and Typescript
 
 The app gives an indication on recommended insurences based on company size and company activities
 
