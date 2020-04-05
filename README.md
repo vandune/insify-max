@@ -1,4 +1,18 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# A example project created in React + typescript.
+
+The app gives an indication on recommended insurences based on company size and company activities
+
+Next steps:
+1. Write tests for updating the shared state and testing more components (now only has a very small test)
+2. Add routing
+3. Look at a more scalable structure for the project
+4. Hook up to an actual API 😛
+
+This app uses React hooks and Typescript. I never worked with React hooks and with React + Typescript, but I really like the combination.
+This app also uses styled-components for scoped styling wich I think reduces a lot of overhead. Styled-comopnents was nice to work with but I feel I could improve on how I use it. The project took me longer than 4 hours, but was nice to work on and I learned a lot of new things.
+
+I hope you like the result.
+
 
 ## Available Scripts
 
@@ -29,16 +43,3 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).

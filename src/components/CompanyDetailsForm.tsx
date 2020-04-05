@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import back from '../assets/back.svg';
 import FormSlider from './FormSlider';
 import FormSelect from './FormSelect';
 import { CompanyContext } from '../context';
@@ -29,6 +30,7 @@ const CompanyDetailsForm: React.FC = () => {
 
   return (
     <Wrapper>
+      <Back><img className="icon" src={back} alt="back"/> Back</Back>
       <Header>Thanks. According to the CoC your company size is <Span>{state.size} fte</Span> and has activities in <Span>{state.activity.toLocaleLowerCase()}</Span>. Is that correct?</Header>
 
       <Form>
@@ -111,6 +113,7 @@ const ButtonGroup = styled.div`
 
 const Button = styled.button<ButtonProps>`
   font: inherit;
+  cursor: pointer;
   font-weight: bold;
   color: ${(props: ButtonProps) => props.primary ? '#ffffff' : 'var(--color-insify-blue)'};
   background-color: ${(props: ButtonProps) => props.primary ? 'var(--color-insify-blue)' : 'transparent'};
@@ -135,4 +138,20 @@ const Button = styled.button<ButtonProps>`
     background-color: ${(props: ButtonProps) => props.primary ? 'hsl(223, 100%, 35%);' : 'transparent'};
     border: ${(props: ButtonProps) => props.primary ? 'none' : '1px solid hsl(223, 100%, 20%);'};
   }
+`
+
+const Back = styled.a`
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  width: 80px;
+  height: 48px;
+
+  > .icon {
+    margin-right: 8px;
+    transition: transform .2s ease-in-out;
+  }
+
 `
