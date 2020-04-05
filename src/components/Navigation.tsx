@@ -7,7 +7,7 @@ const Navigation: React.FC = () => {
     <Nav>
       <Section>
         <Logo>
-          <Img src={logo} />
+          <Img src={logo} alt="Insify" />
         </Logo>
       </Section>
       <P>Let’s get <span>Amsterdam Barber Brothers</span> covered</P>
@@ -19,8 +19,10 @@ export default Navigation;
 
 const Nav = styled.nav`
   height: 64px;
+  position: relative;
   width: 100%;
   background-color: #ffffff;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
 `
 
 const Section = styled.section`

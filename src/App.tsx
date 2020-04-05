@@ -3,6 +3,7 @@ import { CompanyProvider } from './context';
 import CompanyDetailsForm from './components/CompanyDetailsForm';
 import CompanyDetailsPreview from './components/CompanyDetailsPreview';
 import Navigation from './components/Navigation';
+import SupportBar from './components/SupportBar';
 import ImageBackdrop from './components/ImageBackdrop';
 import barber from './assets/barber.jpg';
 import styled from 'styled-components';
@@ -18,6 +19,7 @@ function App() {
           <CompanyDetailsPreview />
           <ImageBackdrop src={barber}/>
         </Grid>
+        <SupportBar />
       </CompanyProvider>
     </Main>
   );
@@ -28,12 +30,18 @@ export default App;
 const Main = styled.div`
   color: var(--color-font);
   width: 100%;
-  height: 100vh;
+  height: fit-content;
   margin: 0 auto;
   background-color: #FBF6F6;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow: auto;
+  position: relative;
+
+  @media (min-width: 1120px) {
+    height: 100vh;
+  }
 `
 
 const Grid = styled.div`

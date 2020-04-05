@@ -4,7 +4,6 @@ import FormSlider from './FormSlider';
 import FormSelect from './FormSelect';
 import { CompanyContext } from '../context';
 import { companyActivityScores } from '../helpers/companyScore';
-import { debounce } from 'lodash';
 
 interface FormCopy {
   confirmButton: string;

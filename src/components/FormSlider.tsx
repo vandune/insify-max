@@ -1,6 +1,5 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { CompanyContext } from '../context';
 
 interface Props {
   value: number;

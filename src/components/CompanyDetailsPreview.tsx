@@ -3,11 +3,6 @@ import { insuranceOptions, companyActivityScores, sizeMultiplier } from '../help
 import { CompanyContext } from '../context';
 import styled from 'styled-components';
 
-interface CompanyDetails {
-  companySize: number;
-  companyActivity: 'beauty care' | 'hairdressing';
-}
-
 const ImageArea: React.FC = () => {
   const { state } = React.useContext(CompanyContext);
   const activityScores = companyActivityScores.find(activity => activity.value === state.activity)?.scoreItems;
@@ -53,7 +48,7 @@ const PreviewWrapper = styled.div`
  align-items: center;
  z-index: 1;
  padding-top: 40px;
- padding-bottom: 48px;
+ padding-bottom: 24px;
 
  @media(min-width: 1120px) {
     padding-top: 80px;
